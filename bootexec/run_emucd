@@ -1,0 +1,6 @@
+#!/bin/bash
+sudo insmod /etc/init.d/emuc2socketcan.ko
+#sudo modprobe emuc2socketcan
+sudo emucd_64 -s9 ttyACM0 can0 can1
+sudo ip link set can0 up qlen 1000
+sudo ip link set can1 up qlen 1000
